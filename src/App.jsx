@@ -12,9 +12,7 @@ function App() {
     
     <div className="App">
        <h1>Koff.ie</h1>
-       <Aeropress coffee="20" />
-       <p>20 gr</p>
-       
+       <Aeropress coffee="20" />       
     </div>
     
   )
