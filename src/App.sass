@@ -35,15 +35,7 @@ body
   min-height: 100vh
   text-rendering: optimizeSpeed
   line-height: 1.5
-  background-color: #222
-  color: #e0bad7
-  background: url(bggradient.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-
+  color: darker(#B79891, 4)  
 
 /* A elements that don't have a class get default styles */
 a:not([class]) 
@@ -51,7 +43,7 @@ a:not([class])
 
 
 /* Make images easier to work with */
-img
+img,
 picture 
   max-width: 100%
   display: block
@@ -83,9 +75,24 @@ select
 
 
 h1
-  color: hotpink
-  font-size: 3rem
+  background-color: #e0bad7
+  color: darkbrown
+  font-size: 2rem
   text-align: center
-  margin-top: .2em
+  padding: .2em
   margin-bottom: .5em
+
+  &::before
+    content: ""
+    width: 110%
+    height: 20px
+    background-color: #e0bad7
+    position: absolute
+    inset: 3.6rem 0 auto 0
+    transform: perspective(1em) rotateX(180deg)
+    z-index: 1
+    border-radius: 100% 0 0 0
+    
+    
+
 

@@ -15,12 +15,12 @@ export default function Timer() {
     <>
       <div className="button-wrapper">
         
-          <Button color="secondary" variant="contained" onClick={start}>Start</Button>
-          <Button color="secondary" variant="outlined" onClick={pause}>Pause</Button>
-          <Button color="secondary" variant="outlined" onClick={reset}>Reset</Button>
+          <Button color="primary" variant="outlined" onClick={pause}>Pause</Button>
+          <Button color="primary" variant="contained" onClick={start}>Start</Button>
+          <Button color="primary" variant="outlined" onClick={reset}>Reset</Button>
         
       </div>
-      <p>Elapsed time: {time}</p>
+      <p className="timer__time">{time}</p>
       {status === 'RUNNING' && <p>Running...</p> || status === 'STOPPED' && <p>drink!</p>}
     </>
   );

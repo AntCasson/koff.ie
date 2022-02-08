@@ -11,14 +11,14 @@ export default function Aeropress({ coffee }) {
         <h2>Aeropress</h2>
         
         <p>How much coffee is needed today?</p>
-        <Slider color="secondary" defaultValue={coffee} step={2} min={10} max={50} />
+        <Slider color="primary" defaultValue={coffee} step={2} min={10} max={50} />
         <div className="button-wrapper">
           <span>weak</span>
           <span>strong</span>
         </div>
 
         <p>What size cup</p>
-        <Slider color="secondary" defaultValue={coffee} step={2} min={10} max={50} />
+        <Slider color="primary" defaultValue={coffee} step={2} min={10} max={50} />
         <div className="button-wrapper">
           <span>tiny cup</span>
           <span>no sleep size</span>
