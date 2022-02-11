@@ -6,12 +6,12 @@ import Aeropress from "./components/Aeropress.jsx"
 const theme = createTheme({
   palette: {
     primary: {
-      // Purple and green play nicely together.
-      main: '#432d27'
+      
+      main: '#3d2a24'
     },
     secondary: {
-      // This is green.A700 as hex.
-      main: '#6b3b2f',
+      
+      main: '#361e2f',
     },
   },
 });
