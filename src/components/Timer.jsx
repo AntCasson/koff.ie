@@ -2,14 +2,30 @@ import { useTimer } from 'use-timer';
 import style from "./style/Timer.sass"
 import Button from '@mui/material/Button';
 import react, {useState, useEffect} from "react"
+import confetti from 'canvas-confetti';
+
+
+
+
 
 export default function Timer() {
   const [coffeeInstruction, setCoffeeInstruction] = useState("Press brew to start")
   const { time, start, pause, reset, status } = useTimer({
     endTime: 0,
-    initialTime: 130,
+    initialTime: 125,
     timerType: 'DECREMENTAL',
   });
+
+  const partyTime = () => {
+    confetti.create(null, {
+      resize: true,
+      useWorker: true,
+    }) 
+      ({ particleCount: 200,
+         spread: 100, 
+         origin: { y: 1.2 } 
+         });
+  }
 
   useEffect(() => {
     if(status === 'RUNNING' && time > 120) {
@@ -34,17 +50,13 @@ export default function Timer() {
         setCoffeeInstruction("Almost done")
     }
     if(status === 'RUNNING' && time < 10 && time >= 0) {
-        setCoffeeInstruction("Break coffee crust")
+        setCoffeeInstruction("Smell 'em beans")
     }
-    if(status === 'STOPPED' && time <= 0) {
+    if(status === 'STOPPED' && time >= 0) {
         setCoffeeInstruction("Enjoy your coffee!")
     }
     if(status === 'STOPPED') {
-        setCoffeeInstruction("Press brew to start")
-    }
-
-
-
+        setCoffeeInstruction("Press brew to start!")}
   },[time]
   )
   
@@ -71,7 +83,8 @@ export default function Timer() {
           </Button>
         
       </div>
-      <p className="timer__time">{time}</p>
+      <p className="timer__time">{time}s</p>
+      {time===0 && partyTime() }
       <p className='coffee-instructions'>{coffeeInstruction}</p>
 
     </>
