@@ -27,7 +27,7 @@ export default function Aeropress({ coffee }) {
           <span className="label-slider">strong</span>
         </div>
 
-        <p className="slider__title">What size cup</p>
+        <p className="slider__title">Size</p>
         <Slider name="water" color="secondary" value={amount.water} onChange={handleChange} step={10} min={150} max={450} />
         <div className="button-wrapper">
           <span className="label-slider">small</span>
@@ -36,12 +36,16 @@ export default function Aeropress({ coffee }) {
         
 
         <div className="weight-wrapper">
-          <img className="coffee-icon" src={coffeeIcon} />
-          <p className="coffee-weight">{(amount.coffee*amount.water).toFixed(1)}gr</p>
-          <img className="coffee-icon" src={waterIcon} />
-          <p className="water-weight">{amount.water}gr</p>
-        </div>
+          <div className="weight-wrapper__info">
+            <img className="coffee-icon" src={coffeeIcon} />
+            <p className="coffee-weight">{(amount.coffee*amount.water).toFixed(1)}<span>gr</span></p>
+          </div>
 
+          <div className="weight-wrapper__info">
+            <img className="coffee-icon" src={waterIcon} />
+            <p className="water-weight">{amount.water}<span>gr</span></p>
+          </div>
+        </div>
         <Timer />
       
     </section>
