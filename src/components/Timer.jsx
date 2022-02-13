@@ -83,7 +83,7 @@ export default function Timer() {
           </Button>
         
       </div>
-      <p className="timer__time">{time}s</p>
+      <p className="timer__time">{time}s<span>brew time</span></p>
       {time===0 && partyTime() }
       <p className='coffee-instructions'>{coffeeInstruction}</p>
 

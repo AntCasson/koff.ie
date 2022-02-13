@@ -2,6 +2,8 @@ import {useState} from "react"
 import style from './style/aeropress.sass';
 import Slider from '@mui/material/Slider';
 import Timer from "./Timer"
+import coffeeIcon from "../assets/coffee.svg"
+import waterIcon from "../assets/water.svg"
 
 export default function Aeropress({ coffee }) {
   const [amount, setAmount] = useState({
@@ -34,8 +36,9 @@ export default function Aeropress({ coffee }) {
         
 
         <div className="weight-wrapper">
+          <img className="coffee-icon" src={coffeeIcon} />
           <p className="coffee-weight">{(amount.coffee*amount.water).toFixed(1)}gr</p>
-          <img></img>
+          <img className="coffee-icon" src={waterIcon} />
           <p className="water-weight">{amount.water}gr</p>
         </div>
 
