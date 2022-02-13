@@ -1,12 +1,13 @@
 import { useTimer } from 'use-timer';
 import style from "./style/Timer.sass"
 import Button from '@mui/material/Button';
-import react, {useState, useEffect} from "react"
+import {useState, useEffect} from "react"
 import confetti from 'canvas-confetti';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
-
+const normalise = (value) => ((value - 0) * 100) / (125 - 0);
 
 export default function Timer() {
   const [coffeeInstruction, setCoffeeInstruction] = useState("Press brew to start")
@@ -21,7 +22,7 @@ export default function Timer() {
       resize: true,
       useWorker: true,
     }) 
-      ({ particleCount: 200,
+      ({ particleCount: 125,
          spread: 100, 
          origin: { y: 1.2 } 
          });
@@ -52,7 +53,7 @@ export default function Timer() {
     if(status === 'RUNNING' && time < 10 && time >= 0) {
         setCoffeeInstruction("Smell 'em beans")
     }
-    if(status === 'STOPPED' && time >= 0) {
+    if(status === 'STOPPED' && time === 0) {
         setCoffeeInstruction("Enjoy your coffee!")
     }
     if(status === 'STOPPED') {
@@ -74,7 +75,7 @@ export default function Timer() {
             color="primary" 
             size="large" 
             variant="contained" 
-            onClick={start}>Brew
+            onClick={start}>Start
           </Button>
           <Button 
             color="secondary" 
@@ -83,9 +84,19 @@ export default function Timer() {
           </Button>
         
       </div>
-      <p className="timer__time">{time}s<span>brew time</span></p>
+      <div className='flex-center'>
+
+        {time !== 0 && <CircularProgress 
+          size={70}  
+          color="secondary" 
+          variant="determinate" 
+          value={normalise(time)} 
+        /> }
+
+        <p className='coffee-instructions'>{coffeeInstruction}</p>
+      </div>
+      
       {time===0 && partyTime() }
-      <p className='coffee-instructions'>{coffeeInstruction}</p>
 
     </>
   );

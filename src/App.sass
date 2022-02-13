@@ -31,11 +31,9 @@ html:focus-within
 body
   min-height: 100vh
   text-rendering: optimizeSpeed
-  line-height: 1.5 
-  background: #606c88
-  background: -webkit-linear-gradient(to bottom, #3f4c6b, #606c88)
-  background: linear-gradient(to bottom, #3f4c6b, #606c88)
-
+  line-height: 1.5
+  background: #484d5c
+  color: #FAF9F9
 
 /* A elements that don't have a class get default styles */
 a:not([class])
@@ -66,22 +64,3 @@ select
     animation-iteration-count: 1 !important
     transition-duration: 0.01ms !important
     scroll-behavior: auto !important
-
-h1
-  background-color: #161b33
-  color: #ebf2fa
-  font-size: 2rem
-  text-align: center
-  padding: .2em
-  margin-bottom: .5em
-
-  &::before
-    content: ""
-    width: 100%
-    height: 20px
-    background-color: #161b33
-    position: absolute
-    inset: 3.6rem 0 auto 0
-    transform: perspective(1em) rotateX(180deg)
-    z-index: 1
-    border-radius: 100% 0 0 0

@@ -1,14 +1,14 @@
 import {useState} from "react"
 import style from './style/aeropress.sass';
-import Slider from '@mui/material/Slider';
+import Sliders from './Sliders';
 import Timer from "./Timer"
-import coffeeIcon from "../assets/coffee.svg"
-import waterIcon from "../assets/water.svg"
+import waterdropIcon from "../assets/waterdrop.svg"
+import beansIcon from "../assets/beans.svg"
 
-export default function Aeropress({ coffee }) {
+export default function Aeropress() {
   const [amount, setAmount] = useState({
-    coffee: 0.06, 
-    water: 240
+    coffee: 0.055, 
+    water: 200
   })
  
   function handleChange({target}) {
@@ -20,30 +20,38 @@ export default function Aeropress({ coffee }) {
     <section className="aeropress-card">
       
         <h2>Aeropress</h2>
-        <p className="slider__title">Strength</p>
-        <Slider name="coffee" color="secondary" onChange={handleChange} value={amount.coffee} step={0.005} min={0.055} max={0.09} />
-        <div className="button-wrapper">
-          <span className="label-slider">weak</span>
-          <span className="label-slider">strong</span>
-        </div>
 
-        <p className="slider__title">Size</p>
-        <Slider name="water" color="secondary" value={amount.water} onChange={handleChange} step={10} min={150} max={450} />
-        <div className="button-wrapper">
-          <span className="label-slider">small</span>
-          <span className="label-slider">big</span>
-        </div>
-        
+        <Sliders
+          cStep={0.005}
+          cMin={0.05} 
+          cMax={0.07}
+          wStep={10}
+          wMin={150} 
+          wMax={225} 
+          handleChange={handleChange} 
+          coffee={amount.coffee} 
+          water={amount.water}
+        />
 
         <div className="weight-wrapper">
           <div className="weight-wrapper__info">
-            <img className="coffee-icon" src={coffeeIcon} />
-            <p className="coffee-weight">{(amount.coffee*amount.water).toFixed(1)}<span>gr</span></p>
+            <img 
+              className="coffee-icon" 
+              src={beansIcon} 
+            />
+            <p 
+              className="coffee-weight">{(amount.coffee*amount.water).toFixed(1)}
+              <span>gr</span>
+            </p>
           </div>
 
           <div className="weight-wrapper__info">
-            <img className="coffee-icon" src={waterIcon} />
-            <p className="water-weight">{amount.water}<span>gr</span></p>
+            <img 
+              className="coffee-icon" 
+              src={waterdropIcon}/>
+            <p className="water-weight">{amount.water}
+            <span>gr</span>
+            </p>
           </div>
         </div>
         <Timer />

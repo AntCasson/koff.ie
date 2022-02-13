@@ -1,29 +1,32 @@
 import './App.sass'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useState} from 'react'
 
 import Aeropress from "./components/Aeropress.jsx"
+import Cleverdripper from "./components/Cleverdripper.jsx"
+import Nav from "./components/Nav.jsx"
 
 const theme = createTheme({
   palette: {
     primary: {
       
-      main: '#606c88'
+      main: '#BEE3DB'
     },
     secondary: {
       
-      main: '#ebf2fa',
+      main: '#BEE3DB',
     },
   },
 });
 
 export default function App() {
-
+  const [showAeropress, setShowAeropress] = useState(true)
 
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <h1>Koff.ie</h1>
-         <Aeropress coffee={20} />       
+         <Nav showAero={setShowAeropress} />
+         {showAeropress ? <Aeropress />  : <Cleverdripper /> }
       </div>
     </ThemeProvider>
     
