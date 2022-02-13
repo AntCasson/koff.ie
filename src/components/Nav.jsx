@@ -22,8 +22,8 @@ export default function Nav({showAero}) {
   return (
     <nav className="nav">
       <h1 onClick={partyTime} className="nav__title-app">Koff.ie</h1>
-      <button onClick={handleChange} className="nav__button nav__button--aeropress">Aeropress</button>
-      <button onClick={handleChange} className="nav__button nav__button--aeropress">Cleverdripper</button>
+      <button onClick={handleChange} className="nav__button">Aeropress</button>
+      <button onClick={handleChange} className="nav__button">Cleverdripper</button>
     </nav>
   )
   
