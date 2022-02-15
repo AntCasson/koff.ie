@@ -57,7 +57,7 @@ export default function Timer() {
         setCoffeeInstruction("Enjoy your coffee!")
     }
     if(status === 'STOPPED') {
-        setCoffeeInstruction("Press brew to start!")}
+        setCoffeeInstruction("Press BREW to start!")}
   },[time]
   )
   
@@ -75,7 +75,7 @@ export default function Timer() {
             color="primary" 
             size="large" 
             variant="contained" 
-            onClick={start}>Start
+            onClick={start}>BREW
           </Button>
           <Button 
             color="secondary" 
