@@ -1,11 +1,28 @@
 .flex-center
+  position: relative
   margin-top: 2em
   display: grid
-  place-items: center
-  gap: 1em
+  grid-template-columns: 1fr 2fr
+  align-items: center
+  justify-items: center
+
+  .time-progress
+    position: relative
+    display: grid
+    grid-template-columns: 1fr
+    place-items: center
+
+  .time-progress > *
+    grid-column: 1/2
+    grid-row: 1/2
+
+    .small-countdown
+      font-size: .9rem
+      color: #BEE3DB
 
 .coffee-instructions
-  font-size: 1.3rem
+  color: #BEE3DB
+  opacity: 0.9
 
 @keyframes fade
   0%

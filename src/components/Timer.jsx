@@ -1,103 +1,59 @@
-import { useTimer } from 'use-timer';
-import style from "./style/Timer.sass"
-import Button from '@mui/material/Button';
-import {useState, useEffect} from "react"
-import confetti from 'canvas-confetti';
-import CircularProgress from '@mui/material/CircularProgress';
+import { useTimer } from "use-timer";
+import style from "./style/Timer.sass";
+import Button from "@mui/material/Button";
+import { useState, useEffect } from "react";
+import { partyTime } from "./timer-functions/partyTime";
+import CircularProgress from "@mui/material/CircularProgress";
+import cleverInstructions from "./timer-functions/clever-inst";
+import aeroInstructions from "./timer-functions/aeropress-instr";
 
+export default function Timer({ totalTime }) {
+  const [coffeeInstruction, setCoffeeInstruction] = useState(
+    "Let's start brewing"
+  );
 
+  const normalize = (value, totalTime) => ((value - 0) * 100) / (totalTime - 0);
 
-const normalise = (value) => ((value - 0) * 100) / (125 - 0);
-
-export default function Timer() {
-  const [coffeeInstruction, setCoffeeInstruction] = useState("Press brew to start")
   const { time, start, pause, reset, status } = useTimer({
     endTime: 0,
-    initialTime: 125,
-    timerType: 'DECREMENTAL',
+    initialTime: totalTime,
+    timerType: "DECREMENTAL"
   });
 
-  const partyTime = () => {
-    confetti.create(null, {
-      resize: true,
-      useWorker: true,
-    }) 
-      ({ particleCount: 125,
-         spread: 100, 
-         origin: { y: 1.2 } 
-         });
-  }
-
   useEffect(() => {
-    if(status === 'RUNNING' && time > 120) {
-        setCoffeeInstruction("Stir gently")
-    }
-    if(status === 'RUNNING' && time < 120 && time > 100) {
-        setCoffeeInstruction("Brewing...")
-    }
-    if(status === 'RUNNING' && time < 100 && time > 75) {
-        setCoffeeInstruction("Get your favorite cup ready")
-    }
-    if(status === 'RUNNING' && time < 75 && time > 60) {
-        setCoffeeInstruction("Still brewing away")
-    }
-    if(status === 'RUNNING' && time < 60 && time > 35) {
-        setCoffeeInstruction("One minute left")
-    }
-    if(status === 'RUNNING' && time < 35 && time > 30) {
-        setCoffeeInstruction("Break coffee crust")
-    }
-    if(status === 'RUNNING' && time < 30 && time > 10) {
-        setCoffeeInstruction("Almost done")
-    }
-    if(status === 'RUNNING' && time < 10 && time >= 0) {
-        setCoffeeInstruction("Smell 'em beans")
-    }
-    if(status === 'STOPPED' && time === 0) {
-        setCoffeeInstruction("Enjoy your coffee!")
-    }
-    if(status === 'STOPPED') {
-        setCoffeeInstruction("Press BREW to start!")}
-  },[time]
-  )
-  
-   
+    totalTime < 190
+      ? cleverInstructions(time, status, setCoffeeInstruction)
+      : aeroInstructions(time, status, setCoffeeInstruction);
+  }, [time]);
 
   return (
     <>
-      <div className="button-wrapper">
-          <Button 
-            color="secondary" 
-            variant="outlined" 
-            onClick={pause}>Pause
-          </Button>
-          <Button 
-            color="primary" 
-            size="large" 
-            variant="contained" 
-            onClick={start}>BREW
-          </Button>
-          <Button 
-            color="secondary" 
-            variant="outlined" 
-            onClick={reset }>Reset
-          </Button>
-        
+      <div className='button-wrapper'>
+        <Button color='secondary' variant='outlined' onClick={pause}>
+          Pause
+        </Button>
+        <Button color='accent' size='large' variant='contained' onClick={start}>
+          BREW
+        </Button>
+        <Button color='secondary' variant='outlined' onClick={reset}>
+          Reset
+        </Button>
       </div>
       <div className='flex-center'>
+        <div className='time-progress'>
+          <CircularProgress
+            size={70}
+            color='secondary'
+            variant='determinate'
+            value={normalize(time, totalTime)}
+          />
 
-        {time !== 0 && <CircularProgress 
-          size={70}  
-          color="secondary" 
-          variant="determinate" 
-          value={normalise(time)} 
-        /> }
-
+          <p className='small-countdown'>{time !== 0 && time}s</p>
+        </div>
         <p className='coffee-instructions'>{coffeeInstruction}</p>
       </div>
-      
-      {time===0 && partyTime() }
 
+      {time === 0 && partyTime()}
     </>
   );
-};
+}
