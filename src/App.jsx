@@ -22,7 +22,7 @@ const theme = createTheme({
 });
 
 export default function App() {
-  const [showAeropress, setShowAeropress] = useState(false);
+  const [showAeropress, setShowAeropress] = useState(true);
 
   return (
     <ThemeProvider theme={theme}>

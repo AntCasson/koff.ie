@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./style/aeropress.sass";
+import style from "./style/brewercard.sass";
 import Sliders from "./Sliders";
 import Timer from "./Timer";
 import waterdropIcon from "../assets/waterdrop.svg";
@@ -18,7 +18,7 @@ export default function Cleverdripper() {
   }
 
   return (
-    <section className='aeropress-card'>
+    <section className='brewer-card'>
       <h2>Cleverdripper</h2>
 
       <Sliders

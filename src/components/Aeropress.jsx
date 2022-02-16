@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./style/aeropress.sass";
+import style from "./style/brewercard.sass";
 import Sliders from "./Sliders";
 import Timer from "./Timer";
 import waterdropIcon from "../assets/waterdrop.svg";
@@ -18,16 +18,16 @@ export default function Aeropress() {
   }
 
   return (
-    <section className='aeropress-card'>
+    <section className='brewer-card'>
       <h2>Aeropress</h2>
 
       <Sliders
-        cStep={0.005}
+        cStep={0.004}
         cMin={0.05}
         cMax={0.07}
         wStep={10}
         wMin={150}
-        wMax={225}
+        wMax={240}
         handleChange={handleChange}
         coffee={amount.coffee}
         water={amount.water}
