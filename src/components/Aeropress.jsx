@@ -34,16 +34,20 @@ export default function Aeropress() {
       />
 
       <div className='weight-wrapper'>
-        <div className='weight-wrapper__info'>
-          <img className='coffee-icon' src={beansIcon} />
+        <div aria-label='coffee weight' className='weight-wrapper__info'>
+          <img className='coffee-icon' alt='coffee beans' src={beansIcon} />
           <p className='coffee-weight'>
             {(amount.coffee * amount.water).toFixed(1)}
             <span>gr</span>
           </p>
         </div>
 
-        <div className='weight-wrapper__info'>
-          <img className='coffee-icon' src={waterdropIcon} />
+        <div aria-label='water weight' className='weight-wrapper__info'>
+          <img
+            className='coffee-icon'
+            alt='water drop image'
+            src={waterdropIcon}
+          />
           <p className='water-weight'>
             {amount.water}
             <span>gr</span>

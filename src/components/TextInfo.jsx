@@ -21,7 +21,10 @@ export default function Textinfo({ showAeropress }) {
           <>
             <p className='section__text'>
               The best way to use this app is to watch the video James Hoffman
-              made below and use this app as a companion. The default values,{" "}
+              made and use this app as a companion.
+              <br />
+              <br />
+              The default values,{" "}
               <span className='accent'>
                 11 grams of coffee and 200gr of water
               </span>
@@ -43,8 +46,10 @@ export default function Textinfo({ showAeropress }) {
             <span className='accent'>Easy, fast, and room for error.</span> The
             tips that Hoffman gives in the video below are great. Especially the
             one about adding your water first in the brewer and your coffee
-            after. It's a lot faster, and after trying both numerous times I
-            think it results in better tasting cups of coffee.
+            after. <br />
+            <br />
+            It's a lot faster and I think it tastes slightly better than the
+            standard method.
             <br />
             <br />
           </p>

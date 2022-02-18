@@ -34,8 +34,8 @@ export default function Cleverdripper() {
       />
 
       <div className='weight-wrapper'>
-        <div className='weight-wrapper__info'>
-          <img className='coffee-icon' src={beansIcon} />
+        <div aria-label='coffee weight' className='weight-wrapper__info'>
+          <img className='coffee-icon' alt='coffee beans' src={beansIcon} />
           <p className='coffee-weight'>
             {(amount.coffee * amount.water).toFixed(1)}
             <span>gr</span>
@@ -43,7 +43,12 @@ export default function Cleverdripper() {
         </div>
 
         <div className='weight-wrapper__info'>
-          <img className='coffee-icon' src={waterdropIcon} />
+          <img
+            aria-label='water weight'
+            alt='water drop image'
+            className='coffee-icon'
+            src={waterdropIcon}
+          />
           <p className='water-weight'>
             {amount.water}
             <span>gr</span>

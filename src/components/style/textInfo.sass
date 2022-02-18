@@ -2,9 +2,11 @@
 
 .section__brewer
   position: relative
-  padding: 1.125em
+  padding-inline: 1.325em
+  padding-block-start: 1em
+  padding-block-end: 2em
   background-color: $clr-dark
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.411) 0px 12px 13px, rgba(0, 0, 0, 0.123) 0px -3px 5px
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px
 
   @media (min-width: 43.75rem )
     display: grid
@@ -39,21 +41,6 @@
       &:focus
         background-color: $clr-pri
         color: $clr-dark
-
-  .section__photo
-    margin-bottom: 2em
-    border-radius: .325rem
-    object-fit: cover
-
-    @media (min-width: 31.25em)
-      margin: auto 0
-      height: 85%
-      width: 40%
-      border-radius: .425em
-
-    @media (min-width: 61.25em)
-      height: 10rem
-      width: 100%
 
   .iframe-container
     position: relative

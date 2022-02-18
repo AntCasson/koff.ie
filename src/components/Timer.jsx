@@ -47,6 +47,7 @@ export default function Timer({ totalTime }) {
       <div className='flex-center'>
         <div className='time-progress'>
           <CircularProgress
+            aria-label='progress bar in seconds'
             size={70}
             color='secondary'
             variant='determinate'
