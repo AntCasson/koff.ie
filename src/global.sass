@@ -32,10 +32,9 @@ body
   min-height: 100vh
   text-rendering: optimizeSpeed
   line-height: 1.5
-  background: #555b6e
+  background: #001B2E
   color: #FAF9F9
   font-family: 'Roboto', sans-serif
-  overflow-y: hidden
 
 /* A elements that don't have a class get default styles */
 a:not([class])
@@ -66,3 +65,15 @@ select
     animation-iteration-count: 1 !important
     transition-duration: 0.01ms !important
     scroll-behavior: auto !important
+
+.layout-wrapper
+  display: grid
+  place-content: center
+  gap: 4rem
+  max-width: 61.25em
+
+  @media (min-width: 61.25em)
+    height: 90vh
+    grid-template-columns: 1.3fr 1fr
+    gap: 0px
+    margin-inline: auto

@@ -1,3 +1,4 @@
+
 .flex-center
   position: relative
   margin-top: 2em
@@ -5,12 +6,22 @@
   grid-template-columns: 1fr 2fr
   align-items: center
   justify-items: center
+  @media (min-width: 61.25em)
+    margin-top: 2.5em
+    font-size: 1.125rem
+    position: static
 
   .time-progress
     position: relative
     display: grid
     grid-template-columns: 1fr
     place-items: center
+
+  .coffee-instructions
+    text-align: center
+
+  .text-xl
+    font-size: 2rem
 
   .time-progress > *
     grid-column: 1/2
@@ -19,13 +30,3 @@
     .small-countdown
       font-size: .9rem
       color: #BEE3DB
-
-.coffee-instructions
-  color: #BEE3DB
-  opacity: 0.9
-
-@keyframes fade
-  0%
-    opacity: 0
-  100%
-    opacity: 1

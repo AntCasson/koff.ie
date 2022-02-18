@@ -1,16 +1,21 @@
 .brewer-card
   position: relative
-  margin-top: 2em
-  margin-inline: auto
+  margin-block-start: 3.125em
   padding: 2em
   color: #FAF9F9
   min-width: 20em
-  max-width: 27.5em
-  border-radius: 2.6rem
-  background-color: #262931
-  // background: -webkit-linear-gradient(to top, #161b33, #161b33)
-  // background: linear-gradient(to top, #161b33, #161b33)
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset
+  max-width: 23.5rem
+  border-radius: .3125rem
+  box-shadow: rgba(black, 0.24) 0px 54px 55px, rgba(black, 0.12) 0px -12px 30px, rgba(black, 0.12) 0px 4px 6px, rgba(black, 0.411) 0px 12px 13px, rgba(black, 0.123) 0px -3px 5px
+
+  @media (min-width: 22.8125em)
+    margin-inline: auto
+
+  @media (min-width: 61.25em)
+    max-width: 22em
+    margin: 0
+    display: grid
+    place-content: center
 
   h2
     text-align: center
@@ -18,6 +23,8 @@
     margin-bottom: .5em
     color: #FAF9F9
     letter-spacing: 1.2px
+    @media (min-width: 61.25em)
+      display: none
 
   .slider__title
     font-size: .9rem
@@ -30,13 +37,15 @@
     gap: 1em
     font-size: 1.625rem
     margin-block: 1em
+    @media (min-width: 61.25em)
+      margin-block: 1.5em
 
     .weight-wrapper__info
       display: flex
       align-items: center
       justify-content: center
       gap: .5em
-      border: #FAF9F9 solid 1.5px
+      border: #b9b9b9 solid 1.5px
       border-radius: .5rem
       padding-inline: .525em
 

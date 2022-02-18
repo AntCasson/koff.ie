@@ -1,11 +1,13 @@
-import "./App.sass";
+import "./global.sass";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 
 import Aeropress from "./components/Aeropress.jsx";
 import Cleverdripper from "./components/Cleverdripper.jsx";
 import Nav from "./components/Nav.jsx";
+import TextInfo from "./components/TextInfo";
 import Footer from "./components/Footer";
+import Textinfo from "./components/TextInfo";
 
 const theme = createTheme({
   palette: {
@@ -13,10 +15,10 @@ const theme = createTheme({
       main: "#BEE3DB"
     },
     secondary: {
-      main: "#BEE3DB"
+      main: "#FF9F1C"
     },
     accent: {
-      main: "#EF798A"
+      main: "#294C60"
     }
   }
 });
@@ -26,9 +28,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className='App'>
-        <Nav showAero={setShowAeropress} />
+      <Nav showAero={setShowAeropress} />
+      <div className='layout-wrapper'>
         {showAeropress ? <Aeropress /> : <Cleverdripper />}
+        <Textinfo showAeropress={showAeropress} />
       </div>
       <Footer />
     </ThemeProvider>

@@ -15,15 +15,15 @@ export default function aeroInstructions(time, status, setCoffeeInstruction) {
     setCoffeeInstruction("Hold brewer and plunger and gently swirl");
   }
   if (status === "RUNNING" && time < 60 && time > 30) {
-    setCoffeeInstruction("Wait 30 seconds and start pushing");
+    setCoffeeInstruction("Wait 30 seconds");
   }
   if (status === "RUNNING" && time < 30 && time > 10) {
     setCoffeeInstruction("Push, slow and steady ");
   }
-  if (status === "RUNNING" && time < 10 && time > 0) {
+  if (status === "RUNNING" && time < 10 && time > 2) {
     setCoffeeInstruction("Keep pushing!");
   }
-  if (status === "STOPPED" && time === 0) {
+  if (status === "RUNNING" && time < 1) {
     setCoffeeInstruction("Enjoy your coffee!");
   }
   if (status === "STOPPED") {

@@ -4,33 +4,35 @@
   justify-content: center
   gap: .8em
   height: 3rem
-  background-color: #BEE3DB
+  width: 100%
+  background-color: #050000
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
-  
+
+  @media (min-width: 61.25em)
+    padding-inline: 3rem
 
   .nav__button
     font-weight: 600
     background-color: transparent
     border: none
     cursor: pointer
-    color: #555B6E
+    color: #FAF9F9
     text-transform: uppercase
     font-size: .8rem
     font-weight: bold
 
-    &:last-of-type
-      margin-inline-end: 1em
+    &:first-of-type
+      margin-inline-start: auto
 
     &:hover,
     &:focus
-      color: #EF798A
-
+      color: #FF9F1C
 
   h1
     margin-inline-start: .5em
     margin-inline-end: .5em
     inset: 0 auto auto 1rem
-    color: #EF798A
+    color: #FF9F1C
     font-size: 1.625rem
     font-weight: 600
     text-align: center

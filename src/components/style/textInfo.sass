@@ -1,0 +1,60 @@
+.section__brewer
+  position: relative
+  padding: 1.125em
+  background-color: #050000
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.411) 0px 12px 13px, rgba(0, 0, 0, 0.123) 0px -3px 5px
+
+  @media (min-width: 31.25rem )
+    display: flex
+    width: 100%
+    gap: 1em
+
+  @media (min-width: 61.25em)
+    padding-inline: 2em
+    grid-column: 1/2
+    grid-row: 1/2
+    display: block
+
+  .section__title
+    margin-top: 1em
+    color: #AC3931
+
+    @media (min-width: 61.25em)
+      font-size: 3rem
+      margin: 0
+
+  .section__subtitle
+    margin-bottom: 1em
+    font-size: .75rem
+    opacity: .7
+    @media (min-width: 61.25em)
+      margin-top: -.3em
+      margin-bottom: 1.5em
+
+  .section__text
+    line-height: 1.6
+    margin-bottom: 2em
+
+    a
+      background-color: #FF9F1C
+      text-decoration: none
+      color: #000
+      &:hover,
+      &:focus
+        background-color: #050000
+        color: #FF9F1C
+
+.section__photo
+  margin-bottom: 2em
+  border-radius: .325rem
+  object-fit: cover
+
+  @media (min-width: 31.25em)
+    margin: auto 0
+    height: 85%
+    width: 40%
+    border-radius: .425em
+
+  @media (min-width: 61.25em)
+    height: 10rem
+    width: 100%

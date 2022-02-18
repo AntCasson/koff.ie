@@ -1,7 +1,7 @@
 import { useTimer } from "use-timer";
 import style from "./style/Timer.sass";
 import Button from "@mui/material/Button";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { partyTime } from "./timer-functions/partyTime";
 import CircularProgress from "@mui/material/CircularProgress";
 import cleverInstructions from "./timer-functions/clever-inst";
@@ -20,7 +20,7 @@ export default function Timer({ totalTime }) {
     timerType: "DECREMENTAL"
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     totalTime < 190
       ? cleverInstructions(time, status, setCoffeeInstruction)
       : aeroInstructions(time, status, setCoffeeInstruction);
@@ -32,7 +32,12 @@ export default function Timer({ totalTime }) {
         <Button color='secondary' variant='outlined' onClick={pause}>
           Pause
         </Button>
-        <Button color='accent' size='large' variant='contained' onClick={start}>
+        <Button
+          color='secondary'
+          size='large'
+          variant='contained'
+          onClick={start}
+        >
           BREW
         </Button>
         <Button color='secondary' variant='outlined' onClick={reset}>
@@ -48,7 +53,11 @@ export default function Timer({ totalTime }) {
             value={normalize(time, totalTime)}
           />
 
-          <p className='small-countdown'>{time !== 0 && time}s</p>
+          {time > 0 ? (
+            <p className='small-countdown'>{time + "s"}</p>
+          ) : (
+            <p className='small-countdown text-xl'>☕</p>
+          )}
         </div>
         <p className='coffee-instructions'>{coffeeInstruction}</p>
       </div>
