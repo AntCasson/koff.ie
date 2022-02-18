@@ -1,3 +1,5 @@
+@use "_vars" as *
+
 .nav
   display: flex
   align-items: center
@@ -5,7 +7,7 @@
   gap: .8em
   height: 3rem
   width: 100%
-  background-color: #050000
+  background-color: $clr-dark
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
 
   @media (min-width: 61.25em)
@@ -16,23 +18,25 @@
     background-color: transparent
     border: none
     cursor: pointer
-    color: #FAF9F9
+    color: $clr-text
     text-transform: uppercase
     font-size: .8rem
     font-weight: bold
 
     &:first-of-type
       margin-inline-start: auto
+    &:last-of-type
+      margin-inline-end: .525em
 
     &:hover,
     &:focus
-      color: #FF9F1C
+      color: $clr-pri
 
   h1
     margin-inline-start: .5em
     margin-inline-end: .5em
     inset: 0 auto auto 1rem
-    color: #FF9F1C
+    color: $clr-pri
     font-size: 1.625rem
     font-weight: 600
     text-align: center

@@ -1,10 +1,15 @@
+@use "_vars" as *
+
 .footer
+  position: relative
+  margin-top: 2em
   display: grid
   width: 100%
   place-content: center
   text-align: center
   font-size: .75rem
-  background-color: #FF9F1C
+  background-color: $clr-pri
+  z-index: 2
 
   @media (min-width: 61.25em)
     position: absolute
@@ -16,7 +21,7 @@
     border-radius: 1rem 1rem 0 0
 
     &--link
-      color: #001B2E
+      color: $clr-sec
       font-weight: 600
       text-decoration: none
       letter-spacing: .5px

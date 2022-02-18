@@ -5,7 +5,7 @@ const partyTime = () => {
   confetti.create(null, {
     resize: true,
     useWorker: true
-  })({ particleCount: 25, spread: 30, origin: { y: 0.8 } });
+  })({ particleCount: 200, spread: 30, origin: { y: 0.99 } });
 };
 
 export default function Nav({ showAero }) {
