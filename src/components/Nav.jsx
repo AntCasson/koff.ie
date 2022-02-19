@@ -1,5 +1,6 @@
-import style from "./style/nav.sass";
+import "./style/nav.sass";
 import confetti from "canvas-confetti";
+import logo from "../assets/logo.png";
 
 const partyTime = () => {
   confetti.create(null, {
@@ -17,9 +18,12 @@ export default function Nav({ showAero }) {
   return (
     <header>
       <nav className='nav'>
-        <h1 onClick={partyTime} className='nav__title-app'>
-          Koff.ie
-        </h1>
+        <img
+          onClick={partyTime}
+          className='logo'
+          src={logo}
+          alt='Koffie Companion logo'
+        />
         <button onClick={handleChange} className='nav__button'>
           Aeropress
         </button>

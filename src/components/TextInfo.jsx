@@ -1,11 +1,7 @@
-import { useEffect, useState } from "react";
-import photoAeropress from "../assets/aeropress-image.jpg";
-import photoClever from "../assets/clever-image.jpg";
 import "./style/textInfo.sass";
 import YoutubeIframe from "./YouTubeIframe";
 
 export default function Textinfo({ showAeropress }) {
-  const { innerWidth: width } = window;
   const videoArr = [
     "https://www.youtube.com/embed/j6VlT_jUVPc",
     "https://www.youtube.com/embed/RpOdennxP24"
@@ -58,14 +54,6 @@ export default function Textinfo({ showAeropress }) {
       <div className='iframe-container'>
         <YoutubeIframe url={videoArr} showAeropress={showAeropress} />
       </div>
-
-      {/* {showAeropress && width < 991 && (
-        <img
-          className='section__photo'
-          src={showAeropress ? photoAeropress : photoClever}
-          alt='Aeropress being used too far from a cup but looks cool'
-        />
-      )} */}
     </section>
   );
 }
