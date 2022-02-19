@@ -10,9 +10,9 @@ export default function Textinfo({ showAeropress }) {
   return (
     <section className='section__brewer'>
       <div className='section__text--wrapper'>
-        <h2 className='section__title'>
+        <h1 className='section__title'>
           {showAeropress ? "Aeropress" : "Cleverdripper"}
-        </h2>
+        </h1>
         {showAeropress ? (
           <>
             <p className='section__text'>
